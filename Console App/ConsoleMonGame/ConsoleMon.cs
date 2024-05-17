@@ -11,5 +11,27 @@ namespace ConsoleMonGame
         int health;
         int energy;
         string name;
+        public int Health;
+        public int Energy;
+        internal void TakeDamage(int damage)
+        {
+
+            Health -= damage;
+
+            if (Health < 0)
+            {
+                Health = 0;
+            }
+        }
+        internal void DepleteEnergy(int energy)
+        {
+            Energy -= energy;
+
+            if (Energy < 0)
+            {
+                Energy = 0;
+            }
+        }
+
     }
 }
