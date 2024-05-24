@@ -6,17 +6,30 @@ using System.Threading.Tasks;
 
 namespace ConsoleMonGame
 {
-    internal class Skill
+    namespace ConsoleMonGame
     {
-        internal int damage;
-        internal int energyCost;
-        string name;
-   
+        namespace ConsoleMonGame
+        {
+            internal class Skill
+            {
+                public int damage;
+                public int energyCost;
+                internal Element element;
 
-    internal void UseOn (ConsoleMon target, ConsoleMon caster)
-    {
-            caster.DepleteEnergy(energyCost);
-            target.TakeDamage(damage);
+                internal void UseOn(ConsoleMon target, ConsoleMon caster)
+                {
+                    caster.DepleteEnergy(energyCost);
+                    target.TakeDamage(damage);
+
+                    if (target.weakness == element)
+                    {
+                        target.TakeDamage(damage / 2);
+                    }
+                }
+            }
+        }
+
+
     }
-    }
+
 }

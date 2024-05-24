@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleMonGame.ConsoleMonGame.ConsoleMonGame;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,31 +7,24 @@ using System.Threading.Tasks;
 
 namespace ConsoleMonGame
 {
-    internal class ConsoleMon
+    namespace ConsoleMonGame
     {
-        string name;
-        public int health;
-        public int energy;
-        private List<Skill> skills;
-        internal void TakeDamage(int damage)
+        internal class ConsoleMon
         {
+            public int health ; 
+            public int energy ;
+            internal Element weakness;
 
-            health -= damage;
-
-            if (health < 0)
+            internal void TakeDamage(int damage)
             {
-                health = 0;
+                health -= damage;
+            }
+
+            internal void DepleteEnergy(int energy)
+            {
+                this.energy -= energy;
             }
         }
-        internal void DepleteEnergy(int energy)
-        {
-            this.energy -= energy;
-
-            if (this.energy < 0)
-            {
-                this.energy = 0;
-            }
-        }
-
     }
+
 }

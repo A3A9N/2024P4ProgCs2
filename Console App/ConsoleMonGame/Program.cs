@@ -1,4 +1,6 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿using ConsoleMonGame.ConsoleMonGame;
+using ConsoleMonGame.ConsoleMonGame.ConsoleMonGame;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ConsoleMonGame
 {
@@ -6,7 +8,6 @@ namespace ConsoleMonGame
     {
         static void Main(string[] args)
         {
-            TestConsoleMonFunctions();
             TestSkillFunctions();
         }
 
@@ -24,20 +25,22 @@ namespace ConsoleMonGame
         static void TestSkillFunctions()
         {
             Console.WriteLine("TestSkillFunctions");
+
             ConsoleMon casterMon = new ConsoleMon();
             ConsoleMon targetMon = new ConsoleMon();
-            targetMon.health = 200;
-            casterMon.energy = 50;
+            targetMon.weakness = Element.Fire; 
+
             Skill skill = new Skill()
             {
                 damage = 100,
                 energyCost = 20,
+                element = Element.Fire 
             };
+
             skill.UseOn(targetMon, casterMon);
 
-            Console.WriteLine(targetMon.health == 100);
-
-            Console.WriteLine(casterMon.energy == 30);
+            Console.WriteLine(targetMon.health == -150); 
+            Console.WriteLine(casterMon.energy == -20); 
         }
     }
 
