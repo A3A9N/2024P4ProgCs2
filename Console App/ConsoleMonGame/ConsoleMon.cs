@@ -11,6 +11,7 @@ namespace ConsoleMonGame
         string name;
         public int health;
         public int energy;
+        private List<Skill> skills;
         internal void TakeDamage(int damage)
         {
 
