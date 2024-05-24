@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace EnumOpdracht
 {
-    internal class Colors
+    enum Colors
     {
+        Red,
+        Green,
+        Blue,
+        Purple
     }
 }

@@ -1,10 +1,19 @@
-﻿namespace EnumOpdracht
+﻿using System;
+
+namespace EnumOpdracht
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+           
+            Colors myMainThemeColor = Colors.Purple;
+
+        
+            if (myMainThemeColor == Colors.Purple)
+            {
+                Console.WriteLine("Dat is mijn kleur!");
+            }
         }
     }
 }
