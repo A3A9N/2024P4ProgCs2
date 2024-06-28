@@ -46,7 +46,8 @@ namespace ConsoleMonGame
         {
             Console.WriteLine("TestFactoryFunctions");
             ConsoleMonFactory factory = new ConsoleMonFactory();
-            factory.Load("monsterdata.txt");
+            //factory.Load("monsterdata.txt"); // Test voor niet-JSON bestand
+            factory.LoadJson("monsterdata.json"); // Test voor JSON bestand
         }
     }
 
