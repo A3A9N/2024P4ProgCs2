@@ -8,7 +8,7 @@ namespace ConsoleMonGame
     {
         static void Main(string[] args)
         {
-            TestSkillFunctions();
+            TestFactoryFunctions();
         }
 
         static void TestConsoleMonFunctions()
@@ -41,6 +41,12 @@ namespace ConsoleMonGame
 
             Console.WriteLine(targetMon.health == -150); 
             Console.WriteLine(casterMon.energy == -20); 
+        }
+        static void TestFactoryFunctions()
+        {
+            Console.WriteLine("TestFactoryFunctions");
+            ConsoleMonFactory factory = new ConsoleMonFactory();
+            factory.Load("monsterdata.txt");
         }
     }
 
